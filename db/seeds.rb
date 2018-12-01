@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+10.times do
+  Animal.create(name: Faker::Dog.name,
+                breed: Faker::Dog.breed,
+                species: "Dog",
+                sex: Faker::Dog.gender,
+                dob: Faker::Date.between(15.years.ago, Date.today),
+                weight: Faker::Number.between(1, 150),
+                color: Faker::Color.color_name,
+                fixed: Faker::Boolean.boolean,
+                good_with_kids: Faker::Boolean.boolean,
+                good_with_dogs: Faker::Boolean.boolean,
+                good_with_cats: Faker::Boolean.boolean,
+                description: Faker::Lorem.paragraph)
+end
