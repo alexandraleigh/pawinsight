@@ -19,7 +19,7 @@ module Api::V1
       @animal = Animal.new(animal_params)
 
       if @animal.save
-        render json: @animal, status: :created, location: @animal
+        render json: @animal, status: :created
       else
         render json: @animal.errors, status: :unprocessable_entity
       end
