@@ -1,0 +1,10 @@
+.wrapper {
+  padding: 56px 20px 20px;
+}
+
+
+@media (min-width:500px) {
+  .wrapper {
+    padding: 64px 20px 20px;
+  }
+}

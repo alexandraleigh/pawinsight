@@ -1,5 +1,5 @@
 import React from 'react'
-import AnimalsContainer from './components/AnimalsContainer'
+import AnimalsContainer from '../AnimalsContainer'
 
 class Animals extends React.Component {
   render() {
