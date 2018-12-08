@@ -6,8 +6,10 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import PawIcon from '@material-ui/icons/Pets';
 import Home from './views/Home'
 import Animals from './views/Animals'
+import NewAnimal from './views/NewAnimal'
 
 const styles = {
   grow: {
@@ -26,8 +28,9 @@ function Navigation(props) {
       <div className="wrapper">
         <AppBar position="fixed">
           <Toolbar>
-            <Typography component={Link} to="/" variant="h6" color="inherit" className={classes.grow}>
-              Paw Insight
+            <Typography component={Link} to="/" variant="h6" color="inherit" className={`logo ${classes.grow}`}>
+              Rescue Insight
+              <PawIcon fontSize="small" />
             </Typography>
             <Button component={NavLink} to="/animals" color="inherit" activeClassName={classes.active}>Animals</Button>
           </Toolbar>
@@ -36,6 +39,7 @@ function Navigation(props) {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/animals" component={Animals} />
+          <Route path="/new-animal" component={NewAnimal} />
         </Switch>
       </div>
     </Router>

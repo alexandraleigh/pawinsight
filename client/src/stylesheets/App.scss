@@ -2,6 +2,21 @@
   padding: 56px 20px 20px;
 }
 
+// Buttons
+.btn-icon-right {
+  svg {
+    margin-left: 8px;
+  }
+}
+
+// Navigation
+.logo {
+  display: flex !important;
+  align-items: center;
+  svg {
+    margin-left: 5px;
+  }
+}
 
 @media (min-width:500px) {
   .wrapper {
