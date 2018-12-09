@@ -9,6 +9,7 @@ import FormLabel from '@material-ui/core/FormLabel';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import Button from '@material-ui/core/Button';
+import AddPhotoIcon from '@material-ui/icons/AddAPhoto';
 
 const styles = theme => ({
   textField: {
@@ -100,11 +101,30 @@ class NewAnimalForm extends Component {
            </RadioGroup>
          </FormControl>
 
+         <FormControl>
+           <input
+             hidden
+             accept="image/*"
+             className={classes.input}
+             id="animal-image"
+             multiple
+             type="file"
+           />
+           <label htmlFor="animal-image">
+             <Button component="span" variant="contained" className="btn-icon-left">
+               <AddPhotoIcon fontSize="small" />
+               Upload Image
+             </Button>
+           </label>
+         </FormControl>
+
          <FormControl className={classes.formControl}>
            <Button type="sumbit" variant="contained" color="primary">
              Submit
            </Button>
          </FormControl>
+
+
       </form>
     );
   }

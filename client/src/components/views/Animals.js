@@ -3,12 +3,14 @@ import axios from 'axios';
 import { Route } from 'react-router-dom'
 import Animal from './Animal';
 import AnimalsTable from '../AnimalsTable';
+import Loading from '../Loading';
 
 class Animals extends Component {
     constructor(props){
       super(props)
       this.state = {
-          animals: []
+          animals: [],
+          loading: true
       }
     }
 
@@ -17,6 +19,7 @@ class Animals extends Component {
         .then(response => {
             console.log(response)
             this.setState({
+                loading: false,
                 animals: response.data
             })
         })
@@ -24,12 +27,18 @@ class Animals extends Component {
     }
 
     render() {
-        return (
-          <div className="animals-container container">
-            <Route path={`${this.props.match.url}/:id`} render={ (props) => <Animal animals= {this.state.animals} {...props} />}/>
-            <Route exact path={this.props.match.url} render={ (props) => <AnimalsTable animals= {this.state.animals} {...props} />}/>
-          </div>
-        )
+        if (this.state.loading) {
+          return (
+            <Loading />
+          )
+        } else {
+          return (
+            <div className="animals-container container">
+              <Route path={`${this.props.match.url}/:id`} render={ (props) => <Animal animals= {this.state.animals} {...props} />}/>
+              <Route exact path={this.props.match.url} render={ (props) => <AnimalsTable animals= {this.state.animals} {...props} />}/>
+            </div>
+          )
+        }
     }
 }
 

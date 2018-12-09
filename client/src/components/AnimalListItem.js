@@ -7,7 +7,11 @@ import ViewIcon from '@material-ui/icons/Pageview';
 const AnimalListItem = ({animal, match}) =>
     <TableRow key={animal.id}>
       <TableCell component="th" scope="row">{animal.id}</TableCell>
-      <TableCell>{animal.name}</TableCell>
+      <TableCell>
+        <Link to={`${match.url}/${animal.id}`}>
+          {animal.name}
+        </Link>  
+      </TableCell>
       <TableCell>{animal.breed}</TableCell>
       <TableCell>{animal.sex}</TableCell>
       <TableCell>

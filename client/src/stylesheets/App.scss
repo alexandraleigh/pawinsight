@@ -8,6 +8,11 @@
     margin-left: 8px;
   }
 }
+.btn-icon-left {
+  svg {
+    margin-right: 8px;
+  }
+}
 
 // Navigation
 .logo {
@@ -18,8 +23,38 @@
   }
 }
 
-@media (min-width:500px) {
+// Loading
+.loading {
+  height: calc(100vh - 65px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Content
+.title-bar--primary {
+  text-align: center;
+  padding: 30px 0;
+  h1 {
+    margin: 0;
+  }
+}
+
+// Responsive
+
+// Sm
+@media (min-width:600px) {
   .wrapper {
     padding: 64px 20px 20px;
+  }
+
+  // Content
+  .title-bar--primary {
+    h1 {
+      text-align: left;
+    }
+    .button-block {
+      text-align: right;
+    }
   }
 }
