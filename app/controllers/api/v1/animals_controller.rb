@@ -47,7 +47,24 @@ module Api::V1
 
       # Only allow a trusted parameter "white list" through.
       def animal_params
-        params.require(:animal).permit(:name, :breed, :dob, :weight, :color, :good_with_kids, :good_with_dogs, :good_with_cats, :description, :fixed, :sex)
+        params.require(:animal).permit(
+          :name,
+          :breed,
+          :dob,
+          :weight,
+          :color,
+          :good_with_kids,
+          :good_with_dogs,
+          :good_with_cats,
+          :description,
+          :fixed,
+          :sex,
+          images_attributes: %I[
+            id
+            image
+            _destroy
+          ]
+        )
       end
   end
 end

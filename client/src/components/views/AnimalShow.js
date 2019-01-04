@@ -1,6 +1,6 @@
 import React from 'react'
 
-class Animal extends React.Component {
+class AnimalShow extends React.Component {
   render() {
     return (
       <div>
@@ -10,4 +10,4 @@ class Animal extends React.Component {
   }
 }
 
-export default Animal
+export default AnimalShow

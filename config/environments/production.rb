@@ -32,6 +32,17 @@ Rails.application.configure do
   # Store files on Amazon S3.
   # config.active_storage.service = :amazon
 
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :preserve_files => true,
+    :s3_credentials => {
+      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'],
+      :s3_region => ENV['S3_REGION']
+    },
+    :bucket => ENV['S3_BUCKET_NAME']
+  }
+
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
   # config.action_cable.url = 'wss://example.com/cable'

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Route } from 'react-router-dom'
-import Animal from './Animal';
+import AnimalShow from './AnimalShow';
 import AnimalsTable from '../AnimalsTable';
 import Loading from '../Loading';
 
@@ -34,7 +34,7 @@ class Animals extends Component {
         } else {
           return (
             <div className="animals-container container">
-              <Route path={`${this.props.match.url}/:id`} render={ (props) => <Animal animals= {this.state.animals} {...props} />}/>
+              <Route path={`${this.props.match.url}/:id`} render={ (props) => <AnimalShow animals= {this.state.animals} {...props} />}/>
               <Route exact path={this.props.match.url} render={ (props) => <AnimalsTable animals= {this.state.animals} {...props} />}/>
             </div>
           )

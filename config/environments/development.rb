@@ -1,3 +1,5 @@
+Paperclip.options[:command_path] = "/usr/local/bin/"
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -29,6 +31,16 @@ Rails.application.configure do
 
   # # Store uploaded files on the local file system (see config/storage.yml for options)
   # config.active_storage.service = :local
+
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'],
+      :s3_region => ENV['S3_REGION']
+    },
+    :bucket => ENV['S3_BUCKET_NAME']
+  }
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false

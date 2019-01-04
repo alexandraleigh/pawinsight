@@ -9,7 +9,7 @@ import Button from '@material-ui/core/Button';
 import PawIcon from '@material-ui/icons/Pets';
 import Home from './views/Home'
 import Animals from './views/Animals'
-import NewAnimal from './views/NewAnimal'
+import AnimalNew from './views/AnimalNew'
 
 const styles = {
   grow: {
@@ -38,8 +38,8 @@ function Navigation(props) {
 
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route path="/animals/new" component={AnimalNew} />
           <Route path="/animals" component={Animals} />
-          <Route path="/new-animal" component={NewAnimal} />
         </Switch>
       </div>
     </Router>
