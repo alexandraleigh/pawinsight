@@ -27,6 +27,7 @@ class AnimalsTable extends Component {
                 <TableHead>
                   <TableRow>
                     <TableCell>ID</TableCell>
+                    <TableCell>Photo</TableCell>
                     <TableCell>Name</TableCell>
                     <TableCell>Breed</TableCell>
                     <TableCell>Sex</TableCell>
